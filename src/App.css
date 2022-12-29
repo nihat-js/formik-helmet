@@ -54,6 +54,18 @@
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
   padding: 1.5rem 1rem;
   color: #fff;
-  background-color: #008;
+  background-color: #363;
   font-size: 1.1rem;
+}
+.App section.contact .container .row .box .head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+.App section.contact .container .row .box .body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
 }

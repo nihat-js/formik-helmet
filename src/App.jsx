@@ -4,10 +4,11 @@ import { ErrorMessage, Formik, Form, Field } from 'formik'
 function App() {
 
   const [data, setData] = useState([{
-    firstName : 'testFirst',
-    lastName : 'testLast',
-    email : 'testEmail',
-    message : 'testMessage' ,
+    firstName : 'Nihat',
+    lastName : 'Abdullaade',
+    email : 'abdullazadenihat@gmail.com',
+    phoneNumber : '0507514178',
+    message : 'Sabahlari ayin 30udu ve hele de men kod yaziram. (( :/ )) ' ,
   }])
 
   const onSubmit = (values, { setSubmitting }) => {
@@ -99,8 +100,8 @@ function Box(props) {
       <span className='lastName'  > lastName  :  {props.data.lastName} </span>
     </div>
     <div className="body">
-      <span className="email"> email :  {props.data.email} </span>
-      <span className='phoneNumber'  > phoneNumber  {props.data.phoneNumber} </span>
+      <span className="email">   {props.data.email} </span>
+      <span className='phoneNumber'  >   {props.data.phoneNumber} </span>
     </div>
     <div className="footer">
       <span className='message'> Message : {props.data.message} </span>
