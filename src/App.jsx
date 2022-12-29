@@ -1,20 +1,23 @@
 import { useState } from 'react'
 import './App.scss'
 import { ErrorMessage, Formik, Form, Field } from 'formik'
+import {Helmet} from 'react-helmet'
+
+
 function App() {
 
   const [data, setData] = useState([{
-    firstName : 'Nihat',
-    lastName : 'Abdullaade',
-    email : 'abdullazadenihat@gmail.com',
-    phoneNumber : '0507514178',
-    message : 'Sabahlari ayin 30udu ve hele de men kod yaziram. (( :/ )) ' ,
+    firstName: 'Nihat',
+    lastName: 'Abdullaade',
+    email: 'abdullazadenihat@gmail.com',
+    phoneNumber: '0507514178',
+    message: 'Sabahlari ayin 30udu  men kod yaziram. (( :/ )) ',
   }])
 
   const onSubmit = (values, { setSubmitting }) => {
     console.log(values)
     setData([
-      ...data, 
+      ...data,
       {
         firstname: values.firstName,
         lastName: values.lastName,
@@ -22,12 +25,17 @@ function App() {
         phoneNumber: values.phoneNumber,
         message: values.message,
       }])
-      setSubmitting(false)
+    setSubmitting(false)
   }
 
 
   return (
     <div className="App">
+      <Helmet>
+        <title> Contact </title>
+        <meta description="author" content="Nihat" />
+        <meta description="og" content="ogg" />
+      </Helmet>
       <section className="contact">
         <div className="container">
           <h2 className="heading"> About </h2>
@@ -48,6 +56,9 @@ function App() {
               }
               if (!values.email) {
                 errors.email = "Email required"
+              }
+              if (!values.phoneNumber){
+                errors.phoneNumber = "Phone number required"
               }
               if (!values.message) {
                 errors.message = "Message required"
@@ -82,7 +93,7 @@ function App() {
           </Formik>
 
           <div className="row">
-            {data.map ( x => <Box data={x} /> ) }
+            {data.map(x => <Box data={x} />)}
           </div>
 
         </div>
@@ -95,21 +106,21 @@ function App() {
 function Box(props) {
   return (
     <div className='box'>
-    <div className="head">
-      <span className="firstName"> firstName :  {props.data.firstName} </span>
-      <span className='lastName'  > lastName  :  {props.data.lastName} </span>
+      <div className="head">
+        <span className="firstName"> firstName :  {props.data.firstName} </span>
+        <span className='lastName'  > lastName  :  {props.data.lastName} </span>
+      </div>
+      <div className="body">
+        <span className="email">   {props.data.email} </span>
+        <span className='phoneNumber'  >   {props.data.phoneNumber} </span>
+      </div>
+      <div className="footer">
+        <span className='message'> Message : {props.data.message} </span>
+      </div>
+
     </div>
-    <div className="body">
-      <span className="email">   {props.data.email} </span>
-      <span className='phoneNumber'  >   {props.data.phoneNumber} </span>
-    </div>
-    <div className="footer">
-      <span className='message'> Message : {props.data.message} </span>
-    </div>
-    
-  </div>
   )
-  
+
 }
 
 export default App
