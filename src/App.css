@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App section.contact .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+.App section.contact .container .heading {
+  text-align: center;
+}
+.App section.contact .container form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.App section.contact .container form input {
+  width: 100%;
+  font-size: 1.1rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 1rem;
+}
+.App section.contact .container form > div {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+  color: white;
+  background-color: #ed1414;
+}
+.App section.contact .container form button {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #008080;
+}
+.App section.contact .container .row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.App section.contact .container .row .box {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem 1rem;
+  color: #fff;
+  background-color: #008;
+  font-size: 1.1rem;
+}
